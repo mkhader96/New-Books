@@ -1,0 +1,14 @@
+{% extends '_base.html' %}
+
+{% block content %}
+
+<h2>{{ book.name }}</h2>
+<h2>Purchaser: {{ book.purchaser.first_name }} {{ book.purchaser.last_name }}</h2>
+<h4>Author: {{book.author}}</h4>
+<h4>Genre: {{book.genre}}</h4>
+<p>{{ book.description }}</p>
+<button><a href="{% url 'Books-update' book.pk %}">+ Update book</a></button>
+<button><a href="{% url 'Books-delete' book.pk %}">+ Delete book</a></button>
+
+
+{% endblock content %}

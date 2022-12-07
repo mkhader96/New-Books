@@ -10,5 +10,6 @@ class CustomUserAdmin(UserAdmin):
     form = CustomUserChangeForm
     model = CustomUser
     list_display = ['email', 'username',]
+    fieldsets= UserAdmin.fieldsets +(('Location',{'fields':('Country',)}),)
 
 admin.site.register(CustomUser, CustomUserAdmin)

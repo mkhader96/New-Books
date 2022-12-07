@@ -1,0 +1,15 @@
+{% extends '_base.html' %}
+
+{% block content %}
+
+<button><a href="{% url 'Books-create' %}">+ New Book</a></button>
+<ul>
+  {% for book in object_list %}
+  <li>
+    <a href="{% url 'Books-detail' book.pk %}">{{ book.name }}</a>
+  </li>
+  {% endfor %}
+</ul>
+
+
+{% endblock content %}
